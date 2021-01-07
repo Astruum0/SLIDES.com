@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div onclick="location.href='select_lvl.html' ; " class="button play"></div>
+        <div onclick="location.href='editor.html' ; " class="button editor"></div>
+        <div onclick="location.href='online_lvl.html' ; " class="button selector"></div>
+        <div onclick="location.href='rules.html' ; " class="button rules"></div>
+    </div>
+{% endblock %}
