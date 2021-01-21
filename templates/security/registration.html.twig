@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('register') }}
+{% endblock %}
+
+{% block body %}
+
+<div id="main">
+        
+
+        {{ form_start(form, {"attr": {"class": "form"}}) }}
+
+        <h1 class="title mb-3">Create an account</h1>
+        {{ form_widget(form.username, { "attr": {"placeholder" : "Username", "maxlength" : "20"}}) }}
+        {{ form_widget(form.email, { "attr": {"placeholder" : "Email"}}) }}
+        {{ form_widget(form.password, { "attr": {"placeholder" : "Password", "maxlength" : "20"}}) }}
+        {{ form_widget(form.confirm_password, { "attr": {"placeholder" : "Confirm Password", "maxlength" : "20"}}) }}
+        
+        {% if form.password.vars['errors']|length > 0 %}
+            {% for error in form.password.vars['errors'] %}
+                <div class="error">{{ error.message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <button type="submit" class="btn btn-dark mt-5">Create account</button>
+        {{ form_end(form) }}
+
+        {# <input name="user" required type="text" placeholder="Username" maxlength="20">
+        <input name="email" required type="text" placeholder="Email">
+        <input name="password" required type="password" placeholder="Password" maxlength="20">
+        <input name="password_conf" required type="password" placeholder="Confirm password" maxlength="20">
+        <?php if ($err != "") { ?>
+            <div class="error">
+                <?= $err ?>
+            </div>
+        <?php } ?>
+        <button name="submit" class="btn btn-dark mt-5">Create account</button> #}
+    </form>
+</div>
+
+{% endblock %}

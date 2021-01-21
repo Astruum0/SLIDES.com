@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles/styles.css">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <title>SLIDES</title>
         {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
@@ -14,17 +13,17 @@
     </head>
     <body>
     <div class="logobox">
-        <button class="btn hidden"><i class="fa fa-caret-left"></i>Return</button>
+        <button class="btn btn-outline-light"><i class="fa fa-caret-left"></i> Return</button>
         <a href="index.html"><img src="{{ asset('menu_images/mainlogo.png') }}" alt="SLIDES" class="logo"></a>
         <button class="connect btn btn-outline-light">Login <i class="fa fa-sign-in"></i></button>
-        <div class="profile">
+        {# <div class="profile">
             <button class="connect btn btn-outline-light">Profile <i class="fa fa-caret-down"></i>
-        </button>
+            </button>
             <div class="dropdown-content">
                 <a href="profile.html">View Profile <i class="fa fa-user-circle-o"></i></a>
                 <a class="bg-gradient-danger text-danger" href="php/logout.php">Logout <i class="fa fa-sign-out"></i></a>
             </div>
-        </div>
+        </div> #}
         <div class="box">
             <div class="login-box">
                 <h1>Login</h1>

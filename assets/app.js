@@ -11,5 +11,5 @@ import "./styles/app.css";
 // start the Stimulus application
 import "./bootstrap";
 
-const logoPath = require("../images/mainlogo.png");
-let html = `<img src="${logoPath}" alt="SLIDES">`;
+// const logoPath = require("../images/mainlogo.png");
+// let html = `<img src="${logoPath}" alt="SLIDES">`;
