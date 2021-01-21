@@ -31,8 +31,8 @@ Le jeu est jouable entièrement sans obligation de création de compte, toutefoi
 
 ## 3. Architecture du site web
 
-![](https://imgur.com/uMXYILm.png)
+![](https://imgur.com/2o1ZuLg.png)
 
-## 4. Diagramme base de donnée
+## 4. Diagramme base de données
 
-![](https://imgur.com/TofRn6i.png)
+![](https://imgur.com/xT8TufW.png)
