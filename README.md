@@ -39,3 +39,4 @@ Le jeu est jouable entièrement sans obligation de création de compte, toutefoi
 
 ## 5. Diagrammes UML
 ### 5.1 Diagramme de cas d'utilisation
+![](https://i.imgur.com/yZAM9xB.png)
