@@ -7,11 +7,20 @@
     {{ encore_entry_link_tags('play') }}
 {% endblock %}
 
-{% block javascripts %}
-    {{ encore_entry_script_tags('game') }}
+{% block javascripts %}   
+    <script>
+        window.onload = function() {
+            stage = {{ level.getLevelComposition }}
+            level_id = parseInt({{ level.getId }})
+            start()
+        }
+    </script>    
+
 {% endblock %}
 
 {% block body %}
+
+<script src="scripts/game.js"></script>
 
 <div class="container">
         <div class="panelButtons hidden">
@@ -29,6 +38,5 @@
             </div>
         </div>
     </div>
-
 
 {% endblock %}

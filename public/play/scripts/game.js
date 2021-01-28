@@ -14,20 +14,20 @@ var previousTime = 0,
   story_mode = true,
   // nbr_lvls = STAGES.length,
   actual_level = 0,
+  level_id,
   output = null;
 
 var SPRITES = new Image();
 SPRITES.src = "./spritesheet.png";
 
-var stageStr;
+var stage;
 
-window.load = function () {
-  console.log("ALLO");
+function start() {
   var canvas = document.getElementById("canvas"),
     c = canvas.getContext("2d");
 
   player = new Player();
-  stage = new Stage(stageStr);
+  stage = new Stage(stage);
 
   player.setDefaultPos(stage.getStartCoords());
 
@@ -46,22 +46,37 @@ window.load = function () {
   }, INTERVAL);
 
   function update() {
+    if (buttons["right"]) {
+      player.setDir("RIGHT", stage.stage);
+    }
     // if (key.isPressed(RIGHT) || buttons["right"]) {
     //     player.setDir("RIGHT", stage.stage);
     // }
 
+    if (buttons["left"]) {
+      player.setDir("LEFT", stage.stage);
+    }
     // if (key.isPressed(LEFT) || buttons["left"]) {
     //     player.setDir("LEFT", stage.stage);
     // }
 
+    if (buttons["up"]) {
+      player.setDir("UP", stage.stage);
+    }
     // if (key.isPressed(UP) || buttons["up"]) {
     //     player.setDir("UP", stage.stage);
     // }
 
+    if (buttons["down"]) {
+      player.setDir("DOWN", stage.stage);
+    }
     // if (key.isPressed(DOWN) || buttons["down"]) {
     //     player.setDir("DOWN", stage.stage);
     // }
 
+    if (buttons["restart"]) {
+      player.reset(stage);
+    }
     // if (key.isPressed(SPACE) || buttons["restart"]) {
     //     player.reset(stage);
     // }
@@ -82,7 +97,7 @@ window.load = function () {
     stage.draw(c, currentTime);
     player.draw(c, currentTime);
   }
-};
+}
 
 var buttons = {};
 
@@ -103,8 +118,9 @@ function clearCanvas(c) {
 
 function Stage(data) {
   this.actualStage = 0;
-  this.nbrStages = data.length;
-  this.stage = JSON.parse(data);
+  // this.nbrStages = data.length;
+  // this.stage = JSON.parse(data);
+  this.stage = data;
 
   this.panelSwitched = false;
   this.arrowRotations = 0;
@@ -561,18 +577,8 @@ function Player() {
         }
         if (block == 3 && x == this.x && y == this.y) {
           this.direction = "none";
-          if (test) {
-            stage.resetStage();
-            return true;
-          }
-          if (!stage.lastLevel()) {
-            stage.nextLevel();
-            this.setDefaultPos(stage.getStartCoords());
-          } else {
-            if (story_mode) {
-              return "choose_stage";
-            }
-          }
+
+          return level_id + 1;
         }
         if (block == 5 && x == this.x && y == this.y) {
           this.reset(stage);
@@ -673,4 +679,11 @@ function Player() {
       }
     }
   };
+}
+
+function buttonClicked(button) {
+  buttons[button] = true;
+  setTimeout(function () {
+    buttons[button] = false;
+  }, 20);
 }
