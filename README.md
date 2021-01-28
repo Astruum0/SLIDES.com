@@ -30,16 +30,19 @@ Le jeu est jouable entièrement sans obligation de création de compte, toutefoi
 - ORM: Doctrine
 
 ## 4. Diagrammes UML
+
 ### 4.1 Architecture du site web
 
 ![](https://imgur.com/2o1ZuLg.png)
 
 ### 4.2 Diagramme base de données
 
-![](https://imgur.com/xT8TufW.png)
+![](https://imgur.com/K9ipcKw.png)
 
 ### 4.3 Diagramme de cas d'utilisation
+
 ![](https://i.imgur.com/LelV53A.png)
 
 ### 4.4 Diagramme de séquence niveau
+
 ![](https://i.imgur.com/cGDYIcD.png)
