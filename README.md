@@ -46,3 +46,16 @@ Le jeu est jouable entièrement sans obligation de création de compte, toutefoi
 ### 4.4 Diagramme de séquence niveau
 
 ![](https://i.imgur.com/cGDYIcD.png)
+
+# Installation
+
+## Setup Database
+
+Dans le fichier `.env`, remplacez le `DATABASE_URL=` à la ligne 30 par l'adresse de votre base de données (XAMPP, MAMP, etc..)
+Dans le dossier racine, faites `php bin/console doctrine:database:create`
+
+Enfin, faites `php bin/console doctrine:fixtures:load` pour charger les niveaux dans votre base de données
+
+## Setup Encore
+
+Avec `yarn` d'installé, dans le dossier racine, faites `yarn install` et `yarn encore dev` pour build le javascript et le CSS

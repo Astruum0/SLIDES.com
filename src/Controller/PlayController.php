@@ -46,7 +46,7 @@ class PlayController extends AbstractController
         $level = $repo->find($id);
 
         $user=$tokenStorage->getToken()->getUser();
-        if ($user != "anon." && $user->getProgress() < $id - 1) {
+        if ($user != "anon." && $user->getProgress() < $id - 5) {
             $user->setProgress($user->getProgress() + 1);
             $manager->persist($user);
             $manager->flush();
