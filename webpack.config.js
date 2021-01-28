@@ -11,6 +11,8 @@ Encore
     .setOutputPath("public/build/")
     .addEntry("app", "./assets/app.js")
     .addEntry("register", "./assets/register.js")
+    .addEntry("play", "./assets/play.js")
+    .addEntry("game", "./assets/game.js")
 
 .copyFiles({
         from: "./assets/images",

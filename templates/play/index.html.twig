@@ -2,7 +2,33 @@
 
 {% block title %}SLIDES{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('play') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('game') }}
+{% endblock %}
+
 {% block body %}
+
+<div class="container">
+        <div class="panelButtons hidden">
+        </div>
+
+        <canvas id="canvas" width="600" height="600"></canvas>
+        <div class="panelButtons">
+            <div class="arrows">
+                <div onclick="buttonClicked('restart')" class="key btn btn-outline-danger"><i class="fa fa-refresh"></i></div>
+                <div onclick="buttonClicked('up')" class="key btn btn-outline-success"><i class="fa fa-chevron-up"></i></div>
+                <div class="key hidden"></div>
+                <div onclick="buttonClicked('left')" class="key btn btn-outline-success"><i class="fa fa-chevron-left"></i></div>
+                <div onclick="buttonClicked('down')" class="key btn btn-outline-success"><i class="fa fa-chevron-down"></i></div>
+                <div onclick="buttonClicked('right')" class="key btn btn-outline-success"><i class="fa fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </div>
 
 
 {% endblock %}

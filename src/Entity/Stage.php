@@ -19,7 +19,7 @@ class Stage
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="level_name")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="level_name")
      */
     private $author_id;
 

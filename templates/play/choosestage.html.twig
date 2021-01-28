@@ -2,7 +2,28 @@
 
 {% block title %}SLIDES{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('play') }}
+{% endblock %}
+
 {% block body %}
+<div id="main">
+    <h1>Select a stage</h1>
+    <div class="list">
+        {% for i in 1..levels|length %}
+            {% set state = i < progress+1 ? "done" : "actual" %}
+            {% if i > progress+1 %}
+            <a class="lvl disabled">{{i}}</a>
+            {% else %}
+            <a href="{{ path('play', {'id': levels[i-1].id}) }}" class="lvl {{state}}">{{i}}</a>
+            {% endif %}
 
-
+            
+            
+            
+        {% endfor %}
+    </div>
+    <h1 class="hidden"></h1>
+</div>
 {% endblock %}
