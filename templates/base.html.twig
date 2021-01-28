@@ -13,29 +13,34 @@
     </head>
     <body>
     <div class="logobox">
-        <button class="btn btn-outline-light"><i class="fa fa-caret-left"></i> Return</button>
-        <a href="index.html"><img src="{{ asset('menu_images/mainlogo.png') }}" alt="SLIDES" class="logo"></a>
-        <button class="connect btn btn-outline-light">Login <i class="fa fa-sign-in"></i></button>
-        {# <div class="profile">
-            <button class="connect btn btn-outline-light">Profile <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="profile.html">View Profile <i class="fa fa-user-circle-o"></i></a>
-                <a class="bg-gradient-danger text-danger" href="php/logout.php">Logout <i class="fa fa-sign-out"></i></a>
-            </div>
-        </div> #}
-        <div class="box">
-            <div class="login-box">
-                <h1>Login</h1>
-                <div class="form-login">
-                    <input autocomplete="off" id="user" type="text" placeholder="Username / Email">
-                    <input autocomplete="off" id="pwd" class="input-log" type="password" placeholder="Password">
-                    <button onclick="connect()" class="btn btn-sm btn-dark mt-2">Login</button>
+        <a href="{{ path('homepage') }}"><button class="btn btn-outline-light"><i class="fa fa-caret-left"></i> Return</button></a>
+        <a href="{{ path('homepage') }}"><img src="{{ asset('menu_images/mainlogo.png') }}" alt="SLIDES" class="logo"></a>
+        
+        
+        
+        {% if app.user %}
+            <div class="profile">
+                <button class="connect btn btn-outline-light">Profile <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="">View Profile <i class="fa fa-user-circle-o"></i></a>
+                    <a class="bg-gradient-danger text-danger" href="{{path('security_logout')}}">Logout <i class="fa fa-sign-out"></i></a>
                 </div>
-
-                <a href="php/register.php">No account ? create one</a>
             </div>
+        {% else %}
+            <button class="connect btn btn-outline-light">Login <i class="fa fa-sign-in"></i></button>
+            <div class="box">
+                <div class="login-box">
+                    <h1>Login</h1>
+                    <form class="form-login" method="post" action="{{path('security_login')}}">
+                        <input required autocomplete="off" id="user" type="text" placeholder="Username" name="_username">
+                        <input required autocomplete="off" id="pwd" class="input-log" type="password" placeholder="Password" name="_password">
+                        <button class="btn btn-sm btn-dark mt-2" type="submit">Login</button>
+                    </form> 
 
+                    <a href="{{ path('security_registration') }}">No account ? create one</a>
+                </div>
+        {% endif %}
         </div>
 
     </div>

@@ -23,6 +23,16 @@
                 <div class="error">{{ error.message }}</div>
             {% endfor %}
         {% endif %}
+        {% if form.email.vars['errors']|length > 0 %}
+            {% for error in form.email.vars['errors'] %}
+                <div class="error">{{ error.message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% if form.username.vars['errors']|length > 0 %}
+            {% for error in form.username.vars['errors'] %}
+                <div class="error">{{ error.message }}</div>
+            {% endfor %}
+        {% endif %}
 
         <button type="submit" class="btn btn-dark mt-5">Create account</button>
         {{ form_end(form) }}
