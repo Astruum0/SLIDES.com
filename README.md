@@ -29,17 +29,17 @@ Le jeu est jouable entièrement sans obligation de création de compte, toutefoi
 - Gestionnaire de dépendances: Composer
 - ORM: Doctrine
 
-## 4. Architecture du site web
+## 5. Diagrammes UML
+### 5.1 Architecture du site web
 
 ![](https://imgur.com/2o1ZuLg.png)
 
-## 5. Diagramme base de données
+### 5.2 Diagramme base de données
 
 ![](https://imgur.com/xT8TufW.png)
 
-## 6. Diagrammes UML
-### 6.1 Diagramme de cas d'utilisation
+### 5.3 Diagramme de cas d'utilisation
 ![](https://i.imgur.com/LelV53A.png)
 
-### 6.2 Diagramme de séquence niveau
+### 5.4 Diagramme de séquence niveau
 ![](https://i.imgur.com/cGDYIcD.png)
