@@ -48,6 +48,10 @@ Le jeu est jouable entièrement sans obligation de création de compte, toutefoi
 ![](https://i.imgur.com/cGDYIcD.png)
 
 # Installation
+1. Installez Composer et Yarn
+2. Lancer votre base de donnée (MySQL etc.)
+2. Clonez le repo git
+3. Faites `composer install` pour installer les dépendances nécessaires
 
 ## Setup Database
 
