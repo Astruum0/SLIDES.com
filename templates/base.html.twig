@@ -1,3 +1,6 @@
+{% set actualPath = path(app.request.attributes.get('_route'),
+                       app.request.attributes.get('_route_params')) %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +16,7 @@
     </head>
     <body>
     <div class="logobox">
-        <a href="{{ path('homepage') }}"><button class="btn btn-outline-light"><i class="fa fa-caret-left"></i> Return</button></a>
+        <a href={% if actualPath starts with '/play' %}"{{ path('choose_stage') }}"{% else %}"{{ path('homepage') }}"{% endif %} {% if actualPath == "/" %}class="hidden"{% endif %}><button class="btn btn-outline-light "><i class="fa fa-caret-left"></i> Return</button></a>
         <a href="{{ path('homepage') }}"><img src="{{ asset('menu_images/mainlogo.png') }}" alt="SLIDES" class="logo"></a>
         
         
