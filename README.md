@@ -22,7 +22,7 @@ Le jeu est jouable entièrement sans obligation de création de compte, toutefoi
 ## 3. Technologies utilisées
 
 - Langage WEB : HTML/CSS/JS - PHP
-- Framework: Symfony
+- Framework: Symfony (PHP), p5 (Javascript)
 - Base de données: MySQL
 - Serveur WEB: Apache
 - Serveur Local: MAMP / XAMPP
