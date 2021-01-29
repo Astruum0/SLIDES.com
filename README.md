@@ -57,9 +57,12 @@ Le jeu est jouable entièrement sans obligation de création de compte, toutefoi
 
 Dans le fichier `.env`, remplacez le `DATABASE_URL=` à la ligne 30 par l'adresse de votre base de données (XAMPP, MAMP, etc..)
 Dans le dossier racine, faites `php bin/console doctrine:database:create`
+Ensuite, faites `php bin/console doctrine:migrations:migrate` pour alimenter la database
 
 Enfin, faites `php bin/console doctrine:fixtures:load` pour charger les niveaux dans votre base de données
 
 ## Setup Encore
 
-Avec `yarn` d'installé, dans le dossier racine, faites `yarn install` et `yarn encore dev` pour build le javascript et le CSS
+Avec `yarn` d'installé, dans le dossier racine, faites `yarn install` et `yarn encore dev` pour build le javascript et le CSS.
+
+Une fois tout cela fait, faites `symfony server:start` pour lancer le serveur local, ouvrez votre navigateur web et allez à l'adresse `localhost:8000`, vous pouvez jouer !
